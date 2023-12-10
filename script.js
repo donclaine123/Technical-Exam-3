@@ -98,7 +98,7 @@ function displayPost(post) {
     likey.textContent = 'Like'
   }
 
-  
+
   flexContainer.appendChild(likeButton);
   flexContainer.appendChild(likesElement);
   flexContainer.appendChild(likey);
@@ -239,8 +239,8 @@ function deletecurrent() {
   }
 }
 function resetArray(newArray) {
-  posts.length = 0; // Clear the array
-  posts.push(...newArray); // Add new elements to the array
+  posts.length = 0;
+  posts.push(...newArray);
 }
 
 function postingNewsFeed() {
@@ -267,6 +267,7 @@ function NewPost() {
   var formatted_time = `${current_time.getFullYear()}-${(current_time.getMonth() + 1).toString().padStart(2, '0')}-${current_time.getDate().toString().padStart(2, '0')}T${current_time.getHours().toString().padStart(2, '0')}:${current_time.getMinutes().toString().padStart(2, '0')}:${current_time.getSeconds().toString().padStart(2, '0')}Z`;
 
   if (imagelink == '' && videolink == '' && caption == '') {
+    document.getElementById('username').value = "";
   }
   else {
     if (imagelink != '') {
@@ -310,10 +311,14 @@ function NewPost() {
         createdAt: formatted_time,
         media: null,
       };
-      console.log(formatted_time);
       posts.push(newPosts);
       postingNewsFeed();
     }
+
+    document.getElementById('username').value = "";
+    document.getElementById('caption').textContent = "";
+    document.getElementById('imagelink').value = "";
+    document.getElementById('videolink').value = "";
   }
 }
 
@@ -337,10 +342,10 @@ function likeButton(button) {
   var likeCount = container.querySelector(".post-likes");
 
   if (likeSticker.classList.contains("liked")) {
-      likeSticker.classList.remove("liked");
-      likeCount.textContent = parseInt(likeCount.textContent) - 1;
+    likeSticker.classList.remove("liked");
+    likeCount.textContent = parseInt(likeCount.textContent) - 1;
   } else {
-      likeSticker.classList.add("liked");
-      likeCount.textContent = parseInt(likeCount.textContent) + 1;
+    likeSticker.classList.add("liked");
+    likeCount.textContent = parseInt(likeCount.textContent) + 1;
   }
 }
