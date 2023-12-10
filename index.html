@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Application</title>
+  <link rel="stylesheet" href="style.css">
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Logo</div>
+      <div class="nav">
+        <a href="#" class="nav-item">Home</a>
+        <a href="#" class="nav-item">About</a>
+        <a href="#" class="nav-item">Contact</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="createpost">Create post</div>
+
+      <div>
+        <input id="username" placeholder="Username"></input>
+      </div>
+
+      <div>
+        <span id="caption" type="input" class="textarea" contenteditable></span>
+      </div>
+
+      <div>
+        <input id="imagelink" class="textarea" placeholder="Upload Image Link"></input>
+      </div>
+
+      <div>
+        <input id="videolink" class="textarea" placeholder="Upload Video Link"></input>
+      </div>
+
+      <div>
+        <button class="postbutton" onclick="NewPost()">POST</button>
+      </div>
+    </div>
+
+
+    <div class="content">
+      <h1>Posts</h1>
+
+      <div id="posts"></div>
+    </div>
+
+    <div class="footer">
+      <p class="footer-text">© 2023 REPLIT</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
