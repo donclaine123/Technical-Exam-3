@@ -80,6 +80,7 @@ function displayPost(post) {
 
   const likeButton = document.createElement("button");
   likeButton.setAttribute("class", "btn");
+  likeButton.setAttribute('onclick', 'likeButton(this)')
 
   likeButton.innerHTML = '<span class="like likeSticker">&#x2764;</span>';
 
@@ -343,11 +344,3 @@ function likeButton(button) {
       likeCount.textContent = parseInt(likeCount.textContent) + 1;
   }
 }
-
-var likeButtons = document.querySelectorAll(".btn");
-
-likeButtons.forEach(function (button) {
-  button.addEventListener("click", function () {
-      likeButton(this);
-  });
-});
