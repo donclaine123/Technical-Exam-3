@@ -69,18 +69,26 @@ function displayPost(post) {
 
   const { media } = post;
 
-  if (media && media.type === "video") {
-    const videoElement = document.createElement("iframe");
-    videoElement.classList.add("post-media");
+if (media && media.type === "video") {
+  const videoElement = document.createElement("iframe");
+  videoElement.classList.add("post-media");
 
-    Object.assign(videoElement, {
-      src: media.url.replace("watch?v=", "embed/"),
-      width: "100%",
-      height: "auto"
-    });
+  let embedUrl = media.url;
 
-    postElement.appendChild(videoElement);
+  if (media.url.includes("list=")) {
+    embedUrl = media.url.replace("playlist?", "videoseries?");
+  } else {
+    embedUrl = media.url.replace("watch?v=", "embed/");
   }
+
+  Object.assign(videoElement, {
+    src: embedUrl,
+    width: "100%",
+    height: "auto"
+  });
+
+  postElement.appendChild(videoElement);
+}
 
   const flexContainer = document.createElement('div');
   flexContainer.className = 'flex';
