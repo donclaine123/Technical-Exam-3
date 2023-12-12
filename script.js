@@ -66,30 +66,12 @@ function displayPost(post) {
     postElement.appendChild(imageElement);
   }
 
-
-  const { media } = post;
-
-  if (media && media.type === "video") {
+  if (post.media && post.media.type === "video") {
     const videoElement = document.createElement("iframe");
     videoElement.classList.add("post-media");
-  
-    let embedUrl;
-  
-    // Check if the URL is a YouTube playlist
-    if (media.url.includes("list=") || media.url.includes("playlist?")) {
-      // If it's a playlist URL, modify the embed URL accordingly
-      embedUrl = media.url.replace("watch?v=", "embed/videoseries?");
-    } else {
-      // If it's a regular video URL, replace "watch?v=" with "embed/"
-      embedUrl = media.url.replace("watch?v=", "embed/");
-    }
-  
-    Object.assign(videoElement, {
-      src: embedUrl,
-      width: "100%",
-      height: "auto"
-    });
-  
+    videoElement.src = post.media.url.replace("watch?v=", "embed/");
+    videoElement.width = "100%";
+    videoElement.height = "auto";
     postElement.appendChild(videoElement);
   }
 
