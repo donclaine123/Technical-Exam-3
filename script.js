@@ -82,7 +82,6 @@ function displayPost(post) {
     postElement.appendChild(videoElement);
   }
 
-
   const flexContainer = document.createElement('div');
   flexContainer.className = 'flex';
 
