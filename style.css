@@ -23,15 +23,18 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-  background-color: #000000;
+  background-color: black;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 5px white;
+  border-radius: 10px;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+  font-family: "Comic Sans MS", "Comic Sans";
   color: #ffffff;
+  letter-spacing: 10px;
 }
 
 .nav {
@@ -51,6 +54,14 @@ body {
   border-radius: 5px;
 }
 
+
+.create-container{
+  margin: 15px;
+  padding: 5px ;
+  box-shadow: 0 0 5px white;
+  border-radius: 10px;
+}
+
 .content {
   background-color: #000000;
   padding: 20px;
@@ -68,7 +79,8 @@ body {
   background-color: #18191a;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 3px 5px white;
+
 }
 
 .post-title {
@@ -192,8 +204,8 @@ button.postbutton {
 
 
 button.postbutton:hover {
-  background-color: white;
-  box-shadow: 0 6px 8px 0 chartreuse;
+  
+  box-shadow: 0 2px 4px whitesmoke;
 }
 
 button.postbutton:active {
