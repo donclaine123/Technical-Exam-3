@@ -78,7 +78,7 @@ function displayPost(post) {
     const videoElement = document.createElement("iframe");
     videoElement.classList.add("post-media");
     videoElement.src = post.media.url.replace("watch?v=", "embed/");
-    videoElement.src = post.media.url.replace(/&link=.*/, '');
+    videoElement.src = post.media.url.replace(/&list=.*/, '');
     videoElement.width = "100%";
     videoElement.height = "auto";
     postElement.appendChild(videoElement);
