@@ -66,14 +66,24 @@ function displayPost(post) {
     postElement.appendChild(imageElement);
   }
 
+  // if (post.media && post.media.type === "video") {
+  //   const videoElement = document.createElement("iframe");
+  //   videoElement.classList.add("post-media");
+  //   videoElement.src = post.media.url.replace("watch?v=", "embed/");
+  //   videoElement.width = "100%";
+  //   videoElement.height = "auto";
+  //   postElement.appendChild(videoElement);
+  // }
   if (post.media && post.media.type === "video") {
     const videoElement = document.createElement("iframe");
     videoElement.classList.add("post-media");
+    videoElement.src = post.media.url.replace(/&link=.*/, '');
     videoElement.src = post.media.url.replace("watch?v=", "embed/");
     videoElement.width = "100%";
     videoElement.height = "auto";
     postElement.appendChild(videoElement);
   }
+
 
   const flexContainer = document.createElement('div');
   flexContainer.className = 'flex';
