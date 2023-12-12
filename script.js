@@ -8,7 +8,6 @@ function Post(id, content, media, username, likes, createdAt) {
   this.createdAt = createdAt;
 }
 
-
 function generateRelativeDate(createdAt) {
   const currentdate = new Date();
   const postDate = new Date(createdAt);
@@ -77,7 +76,7 @@ function displayPost(post) {
     videoElement.height = "auto";
     postElement.appendChild(videoElement);
   }
-  
+
   const flexContainer = document.createElement('div');
   flexContainer.className = 'flex';
 
