@@ -72,6 +72,10 @@ body {
   font-weight: bold;
   color: #ffffff;
   margin: 0 0 20px 0;
+  box-shadow: 0 2px 1px #7FFFD4;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 0 5px 0;
 }
 
 .post {
@@ -254,3 +258,14 @@ button.postbutton:active {
   color: #8e8e8e;
   margin: 0 0 0 3px;
 }
+
+#username,
+#caption,
+#imagelink,
+#videolink {
+  box-shadow: 0 1px 1px white;
+  border-radius: 10px;
+  padding: 0 5px 0;
+}
+
+
